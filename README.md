@@ -1,4 +1,4 @@
-\# University Course Allocation — Spring Boot API
+# University Course Allocation — Spring Boot API
 
 
 
@@ -14,19 +14,19 @@ their lower-priority courses first).
 
 
 
-\## Tech used
+## Tech used
 
-\- \*\*Spring Web\*\* — `@RestController`, `@PostMapping`, JSON request/response binding
+- **Spring Web** — `@RestController`, `@PostMapping`, JSON request/response binding
 
-\- \*\*Spring Validation\*\* — `@Valid` + `@NotBlank` on the request DTO
+- **Spring Validation** — `@Valid` + `@NotBlank` on the request DTO
 
-\- \*\*Spring exception handling\*\* — `@RestControllerAdvice` turns bad input into a clean `400` JSON error instead of a stack trace
+- **Spring exception handling** — `@RestControllerAdvice` turns bad input into a clean `400` JSON error instead of a stack trace
 
-\- \*\*Spring Boot Test\*\* — `@SpringBootTest` + `MockMvc` integration tests hitting the real endpoints
+- **Spring Boot Test** — `@SpringBootTest` + `MockMvc` integration tests hitting the real endpoints
 
 
 
-\## Run it
+## Run it
 
 ```bash
 
@@ -36,11 +36,11 @@ mvn spring-boot:run
 
 
 
-\## Try it — two ways
+## Try it — two ways
 
 
 
-\### Option A: upload a file directly
+### Option A: upload a file directly
 
 ```bash
 
@@ -50,21 +50,21 @@ curl -X POST http://localhost:8080/api/allocate/file -F "file=@input.txt" -o out
 
 
 
-\### Option B: send input as a JSON string
+### Option B: send input as a JSON string
 
 ```bash
 
-curl -X POST http://localhost:8080/api/allocate \\
+curl -X POST http://localhost:8080/api/allocate 
 
-&#x20; -H "Content-Type: application/json" \\
+&#x20; -H "Content-Type: application/json" 
 
-&#x20; -d '{"inputText": "7\\npC,0.5,0,0,1,fde1,0\\npD,1,0,0,1,fde1,1,hde1\\npB,1,0,1,hdc1,1,fde1,0\\npE,0.5,1,fdc1,1,hdc1,0,0\\npA,1,2,fdc1,fdc2,0,0,0\\npF,1,1,fdc1,0,0,0\\npG,1,1,fdc1,0,0,0\\n"}'
+&#x20; -d '{"inputText": "7npC,0.5,0,0,1,fde1,0npD,1,0,0,1,fde1,1,hde1npB,1,0,1,hdc1,1,fde1,0npE,0.5,1,fdc1,1,hdc1,0,0npA,1,2,fdc1,fdc2,0,0,0npF,1,1,fdc1,0,0,0npG,1,1,fdc1,0,0,0n"}'
 
 ```
 
 
 
-\## Run the tests
+## Run the tests
 
 ```bash
 
@@ -74,7 +74,7 @@ mvn test
 
 
 
-\## How the algorithm works
+## How the algorithm works
 
 Each course is assigned to professors in priority order. If a professor is
 
